@@ -1,7 +1,30 @@
 <div class="container">
-  <p>test</p>
-  <h1>{{ movie.Title }}</h1>
-  <div>
-    <img src="{{ movie.Poster }}" alt="" />
+  <div class="card-movie">
+    <div class="card-movie__banner">
+      <img src="{{ movie.Poster }}" alt="" />
+    </div>
+
+    <div class="card-movie__info">
+      <h1 class="card-movie__title">{{ movie.Title }}</h1>
+      <h4>Genre: {{ movie.Genre }}</h4>
+      <ul>
+        <li>BoxOffice: {{ movie.BoxOffice }}</li>
+        <li>Awards: {{ movie.Awards }}</li>
+        <li>imdbRating: {{ movie.imdbRating }}</li>
+        <li>Type: {{ movie.Type }}</li>
+        <li>Year: {{ movie.Year }}</li>
+        <li>Released: {{ movie.Released }}</li>
+        <li>Director: {{ movie.Director }}</li>
+        <li>Country: {{ movie.Country }}</li>
+        <li>Runtime: {{ movie.Runtime }}</li>
+      </ul>
+    </div>
+
+    <div class="card-movie__descr">{{ movie.Plot }}</div>
+
+    <div class="card-movie__wrap">
+      <button>Добавить в избранное</button>
+      <button>Смотреть на IMDb</button>
+    </div>
   </div>
 </div>
