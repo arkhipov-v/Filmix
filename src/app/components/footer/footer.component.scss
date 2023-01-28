@@ -1,5 +1,4 @@
 .footer {
-  padding-block: 20px;
   background: #673ab7;
 
   &__content {
@@ -7,6 +6,7 @@
     justify-content: space-between;
     align-items: center;
     row-gap: 10px;
+    height: var(--footer-height);
     color: #fff;
 
     a {
