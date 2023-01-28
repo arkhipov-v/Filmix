@@ -18,4 +18,8 @@ export class MovieService {
   getForName(searchStr: string): Observable<any> {
     return this.http.get(`${this.API_URL}&s=${searchStr}${this.API_KEY}`);
   }
+
+  getMovie(id: any) {
+    return this.http.get<any>(`${this.API_URL}&i=${id}${this.API_KEY}`);
+  }
 }

@@ -24,6 +24,7 @@ import { SelectComponent } from './components/select/select.component';
 import { SearchComponent } from './components/search/search.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TableResultsComponent } from './components/table-results/table-results.component';
+import { CardMovieComponent } from './components/card-movie/card-movie.component';
 // --- NEW
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { TableResultsComponent } from './components/table-results/table-results.
     SearchComponent,
     FooterComponent,
     TableResultsComponent,
+    CardMovieComponent,
   ],
   imports: [
     // Angular Material
