@@ -5,7 +5,9 @@
     mat-icon-button
     class="example-icon"
     aria-label="Example icon-button with share icon"
-    routerLink="/"
+    routerLink="catalog"
+    routerLinkActive="activebutton"
+    ariaCurrentWhenActive="page"
   >
     <mat-icon>list_alt</mat-icon>
   </button>
@@ -14,7 +16,15 @@
     class="example-icon favorite-icon"
     aria-label="Example icon-button with heart icon"
     routerLink="favorites"
+    routerLinkActive="activebutton"
+    ariaCurrentWhenActive="page"
   >
     <mat-icon>favorite</mat-icon>
   </button>
 </mat-toolbar>
+
+<style>
+  .activebutton {
+    background-color: #f34236;
+  }
+</style>

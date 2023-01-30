@@ -29,6 +29,8 @@ import { TableResultsComponent } from './components/table-results/table-results.
 import { CardMovieComponent } from './components/card-movie/card-movie.component';
 import { FavoritesComponent } from './pages/favorites/favorites.component';
 import { MovieDetailComponent } from './pages/movie-detail/movie-detail.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { UiComponent } from './pages/ui/ui.component';
 // --- NEW
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { MovieDetailComponent } from './pages/movie-detail/movie-detail.componen
     CardMovieComponent,
     FavoritesComponent,
     MovieDetailComponent,
+    PageNotFoundComponent,
+    UiComponent,
   ],
   imports: [
     // Angular Material
