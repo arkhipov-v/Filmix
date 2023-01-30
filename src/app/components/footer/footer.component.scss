@@ -1,18 +1,36 @@
 .footer {
-  background: #673ab7;
+  background: var(--color-primary);
 
-  &__content {
+  &__wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    row-gap: 10px;
+    gap: 5px 10px;
     height: var(--footer-height);
     color: #fff;
 
+    @media (max-width: 400px) {
+      height: auto;
+      flex-wrap: wrap;
+      padding-block: 15px;
+    }
+  }
+
+  &__author {
+    @media (max-width: 400px) {
+      order: 1;
+      width: 100%;
+      text-align: center;
+    }
+
     a {
-      font: 500 20px/32px Roboto, sans-serif;
-      color: inherit;
-      text-decoration: none;
+      transition: color 0.2s ease;
+
+      @media (any-hover) {
+        &:hover {
+          color: var(--color-accent);
+        }
+      }
     }
   }
 }
