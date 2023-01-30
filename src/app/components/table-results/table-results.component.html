@@ -1,18 +1,21 @@
 <section class="table-results">
   <div class="container">
-    <!-- Вынести -->
-    <div style="margin-bottom: 30px">
-      <input
-        #search
-        style="width: 300px; height: 30px"
-        type="text"
-        placeholder="Search"
-      />
+    <!-- Вынести поиск -->
+    <div style="display: flex; align-items: flex-start; margin-bottom: 30px">
+      <mat-form-field class="example-full-width">
+        <input #search matInput placeholder="Search movie" />
+      </mat-form-field>
       <button
-        style="height: 30px; padding-inline: 10px"
+        mat-raised-button
+        color="primary"
         (click)="getForNameMovie(search.value)"
+        style="
+          height: 56px;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        "
       >
-        Go
+        Search
       </button>
     </div>
     <!-- Вынести -->
