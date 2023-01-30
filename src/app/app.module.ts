@@ -14,6 +14,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
 
 // Components
 import { CatalogComponent } from './pages/catalog/catalog.component';
@@ -26,6 +27,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { TableResultsComponent } from './components/table-results/table-results.component';
 import { CardMovieComponent } from './components/card-movie/card-movie.component';
 import { FavoritesComponent } from './pages/favorites/favorites.component';
+import { MovieDetailComponent } from './pages/movie-detail/movie-detail.component';
 // --- NEW
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { FavoritesComponent } from './pages/favorites/favorites.component';
     TableResultsComponent,
     CardMovieComponent,
     FavoritesComponent,
+    MovieDetailComponent,
   ],
   imports: [
     // Angular Material
@@ -50,6 +53,7 @@ import { FavoritesComponent } from './pages/favorites/favorites.component';
     MatIconModule,
     MatFormFieldModule,
     MatSelectModule,
+    MatCardModule,
 
     BrowserModule,
     AppRoutingModule,

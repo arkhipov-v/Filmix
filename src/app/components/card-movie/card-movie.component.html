@@ -1,30 +1,39 @@
 <div class="container">
-  <div class="card-movie">
-    <div class="card-movie__banner">
-      <img src="{{ movie.Poster }}" alt="" />
-    </div>
+  <mat-card class="card-movie">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>{{ movie.Title }}</mat-card-title>
+        <mat-card-subtitle>{{ movie.Genre }}</mat-card-subtitle>
+        <mat-card-subtitle>
+          <ul>
+            <li>BoxOffice: {{ movie.BoxOffice }}</li>
+            <li>Awards: {{ movie.Awards }}</li>
+            <li>imdbRating: {{ movie.imdbRating }}</li>
+            <li>Type: {{ movie.Type }}</li>
+            <li>Year: {{ movie.Year }}</li>
+            <li>Released: {{ movie.Released }}</li>
+            <li>Director: {{ movie.Director }}</li>
+            <li>Country: {{ movie.Country }}</li>
+            <li>Runtime: {{ movie.Runtime }}</li>
+          </ul>
+        </mat-card-subtitle>
+        <img src="{{ movie.Poster }}" />
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      <p class="card-movie__descr">{{ movie.Plot }}</p>
 
-    <div class="card-movie__info">
-      <h1 class="card-movie__title">{{ movie.Title }}</h1>
-      <h4>Genre: {{ movie.Genre }}</h4>
-      <ul>
-        <li>BoxOffice: {{ movie.BoxOffice }}</li>
-        <li>Awards: {{ movie.Awards }}</li>
-        <li>imdbRating: {{ movie.imdbRating }}</li>
-        <li>Type: {{ movie.Type }}</li>
-        <li>Year: {{ movie.Year }}</li>
-        <li>Released: {{ movie.Released }}</li>
-        <li>Director: {{ movie.Director }}</li>
-        <li>Country: {{ movie.Country }}</li>
-        <li>Runtime: {{ movie.Runtime }}</li>
-      </ul>
-    </div>
-
-    <div class="card-movie__descr">{{ movie.Plot }}</div>
-
-    <div class="card-movie__wrap">
-      <button>Добавить в избранное</button>
-      <button>Смотреть на IMDb</button>
-    </div>
-  </div>
+      <div class="card-movie__wrap">
+        <!-- <button mat-raised-button color="primary">Add to favorites</button> -->
+        <!-- <a
+          mat-raised-button
+          color="accent"
+          href="https://www.imdb.com/"
+          target="_blank"
+          >Watch on IMDb</a
+        > -->
+        <button mat-raised-button color="accent">Add to favorites</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
 </div>
