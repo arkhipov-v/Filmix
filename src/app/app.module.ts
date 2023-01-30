@@ -31,6 +31,7 @@ import { FavoritesComponent } from './pages/favorites/favorites.component';
 import { MovieDetailComponent } from './pages/movie-detail/movie-detail.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { UiComponent } from './pages/ui/ui.component';
+import { LogoComponent } from './components/logo/logo.component';
 // --- NEW
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { UiComponent } from './pages/ui/ui.component';
     MovieDetailComponent,
     PageNotFoundComponent,
     UiComponent,
+    LogoComponent,
   ],
   imports: [
     // Angular Material
