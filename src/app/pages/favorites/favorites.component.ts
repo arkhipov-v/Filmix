@@ -6,14 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./favorites.component.scss'],
 })
 export class FavoritesComponent {
-  favorieteMoviesList: any = [
-    {
-      name: 'Batman Begins',
-      id: 'tt0372784',
-    },
-    {
-      name: 'Spider-Man',
-      id: 'tt0145487',
-    },
-  ];
+  favorieteMoviesList: any;
+
+  ngOnInit(): void {
+    this.GetInLocalStorage();
+  }
+
+  GetInLocalStorage() {
+    this.favorieteMoviesList = JSON.parse(
+      localStorage.getItem('Favorites List') || '{}'
+    );
+
+    // const result = window.localStorage.getItem('Favorites List');
+    // this.favorieteMoviesList = JSON.parse(result);
+    console.log(this.favorieteMoviesList);
+  }
 }
