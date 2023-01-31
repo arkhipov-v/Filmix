@@ -1,20 +1,28 @@
-<div class="container">
-  <div class="favorites__banner">
-    <h1>Favorites movie</h1>
-  </div>
+<section class="favorites section-offsets">
+  <div class="container container--sm">
+    <div class="favorites__content mat-elevation-z8">
+      <div class="favorites__header">
+        <h1>Favorites movie</h1>
+      </div>
+      <div class="favorites__body">
+        <div *ngIf="favorieteMoviesList.length > 0; else elseBlock">
+          <ol class="favorites__list">
+            <li *ngFor="let item of favorieteMoviesList">
+              <a [routerLink]="'/movies/' + item.id">{{ item.name }}</a>
+              <a><mat-icon>cancel</mat-icon></a>
+            </li>
+          </ol>
+        </div>
+        <ng-template #elseBlock>
+          <h2>Favorites list is empty!</h2>
+        </ng-template>
+      </div>
 
-  <div class="container">
-    <div *ngIf="favorieteMoviesList.length > 0; else elseBlock">
-      <ol class="favorites__list" *ngFor="let item of favorieteMoviesList">
-        <li [routerLink]="'/movies/' + item.id">{{ item.name }}</li>
-      </ol>
+      <div class="favorites__controls">
+        <button mat-raised-button color="accent" routerLink="catalog">
+          Go to catalog
+        </button>
+      </div>
     </div>
-    <ng-template #elseBlock>
-      <h2>Favorites list is empty!</h2>
-    </ng-template>
-
-    <button mat-raised-button color="accent" routerLink="/">
-      Go to catalog
-    </button>
   </div>
-</div>
+</section>
