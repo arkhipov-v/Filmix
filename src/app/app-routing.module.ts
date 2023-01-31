@@ -8,6 +8,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 const routes: Routes = [
   { path: 'catalog', component: CatalogComponent },
   { path: '', redirectTo: '/catalog', pathMatch: 'full' },
+  { path: 'filmix', redirectTo: '/catalog', pathMatch: 'full' },
   { path: 'movies/:id', component: MovieDetailComponent },
   { path: 'favorites', component: FavoritesComponent },
   { path: '**', component: PageNotFoundComponent },
