@@ -3,6 +3,14 @@
     width: 100%;
   }
 
+  .mat-mdc-table .mat-mdc-row {
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: rgba(103, 58, 183, 0.025);
+    }
+  }
+
   &__pagination {
     position: sticky;
     bottom: 0;
