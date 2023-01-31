@@ -3,6 +3,11 @@
     width: 100%;
   }
 
+  td {
+    padding-block: 15px;
+    line-height: 0;
+  }
+
   .mat-mdc-table .mat-mdc-row {
     transition: background-color 0.3s ease;
 
