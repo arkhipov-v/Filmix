@@ -16,9 +16,22 @@ export class FavoritesComponent {
     this.favorieteMoviesList = JSON.parse(
       localStorage.getItem('Favorites List') || '{}'
     );
+  }
 
-    // const result = window.localStorage.getItem('Favorites List');
-    // this.favorieteMoviesList = JSON.parse(result);
-    console.log(this.favorieteMoviesList);
+  clearFavoritesList() {
+    localStorage.clear();
+    this.GetInLocalStorage();
+  }
+
+  removeMovieById(id: string) {
+    const items: Array<{ id: string }> = JSON.parse(
+      localStorage.getItem('Favorites List') || '{}'
+    );
+
+    localStorage.setItem(
+      'Favorites List',
+      JSON.stringify(items.filter((el) => el.id !== id))
+    );
+    this.GetInLocalStorage();
   }
 }

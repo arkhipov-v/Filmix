@@ -11,12 +11,27 @@
     margin-bottom: 30px;
   }
 
-  &__list li {
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding-bottom: 10px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 
     &:not(:last-child) {
       margin-bottom: 20px;
     }
+  }
+
+  &__control-list {
+    padding-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: center;
+    padding-top: 35px;
   }
 }
