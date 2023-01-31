@@ -1,0 +1,22 @@
+.favorites {
+  &__content {
+    padding: 30px 20px;
+  }
+
+  &__header {
+    margin-bottom: 30px;
+  }
+
+  &__body {
+    margin-bottom: 30px;
+  }
+
+  &__list li {
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}
