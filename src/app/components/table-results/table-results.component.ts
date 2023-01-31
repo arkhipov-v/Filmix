@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MovieService } from 'src/app/services/movie.service';
@@ -20,32 +20,22 @@ export class TableResultsComponent implements OnInit {
   ngOnInit(): void {
     this.GetAll();
   }
+
   GetAll() {
     this.service.getAllMovies().subscribe((result) => {
       this.movieData = result.Search;
-      console.log(result);
 
       this.dataSource = new MatTableDataSource<any>(this.movieData);
       this.dataSource.paginator = this.paginator;
     });
   }
 
-  // Old
-  // GetAll() {
-  //   this.service.getAllMovies().subscribe((result) => {
-  //     this.movieData = result.Search;
+  getForNameMovie(searchStr: string) {
+    this.service.getForName(searchStr).subscribe((resultSearch) => {
+      this.movieData = resultSearch.Search;
 
-  //     this.dataSource = new MatTableDataSource<any>(this.movieData);
-  //     this.dataSource.paginator = this.paginator;
-  //   });
-  // }
-
-  // getForNameMovie(searchStr: string) {
-  //   this.service.getForName(searchStr).subscribe((resultSearch) => {
-  //     this.movieData = resultSearch.Search;
-
-  //     this.dataSource = new MatTableDataSource<any>(this.movieData);
-  //     this.dataSource.paginator = this.paginator;
-  //   });
-  // }
+      this.dataSource = new MatTableDataSource<any>(this.movieData);
+      this.dataSource.paginator = this.paginator;
+    });
+  }
 }
