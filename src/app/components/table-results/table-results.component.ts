@@ -18,24 +18,25 @@ export class TableResultsComponent implements OnInit {
   constructor(private service: MovieService) {}
 
   ngOnInit(): void {
-    this.GetAll();
+    // this.GetAll();
   }
 
-  GetAll() {
-    this.service.getAllMovies().subscribe((result) => {
-      this.movieData = result.Search;
+  // Old
+  // GetAll() {
+  //   this.service.getAllMovies().subscribe((result) => {
+  //     this.movieData = result.Search;
 
-      this.dataSource = new MatTableDataSource<any>(this.movieData);
-      this.dataSource.paginator = this.paginator;
-    });
-  }
+  //     this.dataSource = new MatTableDataSource<any>(this.movieData);
+  //     this.dataSource.paginator = this.paginator;
+  //   });
+  // }
 
-  getForNameMovie(searchStr: string) {
-    this.service.getForName(searchStr).subscribe((resultSearch) => {
-      this.movieData = resultSearch.Search;
+  // getForNameMovie(searchStr: string) {
+  //   this.service.getForName(searchStr).subscribe((resultSearch) => {
+  //     this.movieData = resultSearch.Search;
 
-      this.dataSource = new MatTableDataSource<any>(this.movieData);
-      this.dataSource.paginator = this.paginator;
-    });
-  }
+  //     this.dataSource = new MatTableDataSource<any>(this.movieData);
+  //     this.dataSource.paginator = this.paginator;
+  //   });
+  // }
 }

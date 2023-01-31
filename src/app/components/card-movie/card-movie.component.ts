@@ -16,28 +16,28 @@ export class CardMovieComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.loadMovie();
-
-    setTimeout(() => console.log(this.movie), 600);
-
-    console.log(this.movie);
-    this.getTitle();
+    // Old
+    // this.loadMovie();
+    // setTimeout(() => console.log(this.movie), 600);
+    // console.log(this.movie);
+    // this.getTitle();
   }
 
-  loadMovie() {
-    this.movieService
-      .getMovie(this.route.snapshot.paramMap.get('id'))
-      .subscribe((movie) => {
-        this.movie = movie;
-        // console.log(this.movie);
-      });
-  }
+  // loadMovie() {
+  //   this.movieService
+  //     .getMovie(this.route.snapshot.paramMap.get('id'))
+  //     .subscribe((movie) => {
+  //       this.movie = movie;
+  //       // console.log(this.movie);
+  //     });
+  // }
 
-  getTitle() {
-    console.log(this.movie);
-  }
+  // getTitle() {
+  //   console.log(this.movie);
+  // }
 }
 
+// Черновики + Наработки
 // getId() {
 //   this.movieId = this.route.snapshot.paramMap.get('id');
 // }
