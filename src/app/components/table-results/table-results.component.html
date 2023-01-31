@@ -1,23 +1,32 @@
 <section class="table-results">
   <div class="container">
     <!-- Вынести поиск -->
-    <div style="display: flex; align-items: flex-start; margin-bottom: 30px">
+    <div class="search">
       <mat-form-field class="example-full-width">
         <input #search matInput placeholder="Search movie" />
       </mat-form-field>
       <button
+        class="search__btn"
         mat-raised-button
         color="primary"
-        style="
-          height: 56px;
-          border-top-left-radius: 0;
-          border-bottom-left-radius: 0;
-        "
         (click)="getForNameMovie(search.value)"
       >
         Search
       </button>
     </div>
+    <style>
+      .search {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 30px;
+      }
+
+      .search__btn {
+        height: 56px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    </style>
     <!-- Вынести -->
 
     <div class="mat-elevation-z8 table-container">
@@ -68,7 +77,7 @@
 
       <mat-paginator
         class="table-results__pagination"
-        [pageSizeOptions]="[5, 10, 20]"
+        [pageSizeOptions]="[5, 10]"
       ></mat-paginator>
     </div>
   </div>
