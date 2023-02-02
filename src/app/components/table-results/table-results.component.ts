@@ -1,5 +1,4 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
-// import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MovieService } from 'src/app/services/movie.service';
 
@@ -13,26 +12,29 @@ export class TableResultsComponent implements OnInit {
   dataSource: any;
   movieData: any;
 
-  currentPage = 1;
-
-  // @ViewChild(MatPaginator) paginator!: MatPaginator;
+  currentPage: number = 1;
+  currentName?: string;
 
   constructor(private service: MovieService) {}
 
   ngOnInit(): void {
-    this.GetAll();
+    this.searchMovies('game');
   }
 
-  GetAll() {
-    this.service.getAllMovies(this.currentPage).subscribe((result) => {
+  searchMovies(searchStr: string) {
+    this.currentPage = 1;
+    const buttonPrev = document.querySelector('.button-prev-page');
+    buttonPrev?.setAttribute('disabled', '');
+
+    this.service.getMovies(searchStr).subscribe((result) => {
       this.movieData = result.Search;
-      console.log(result);
+      this.currentName = searchStr;
 
       this.dataSource = new MatTableDataSource<any>(this.movieData);
     });
   }
 
-  GetAllNextPage() {
+  GetNextPage() {
     const buttonPrev = document.querySelector('.button-prev-page');
 
     this.currentPage++;
@@ -41,37 +43,28 @@ export class TableResultsComponent implements OnInit {
       buttonPrev?.removeAttribute('disabled');
     }
 
-    this.service.getAllMovies(this.currentPage).subscribe((result) => {
-      this.movieData = result.Search;
-      console.log(result);
-
-      this.dataSource = new MatTableDataSource<any>(this.movieData);
-    });
+    this.service
+      .getMovies(this.currentName, this.currentPage)
+      .subscribe((result) => {
+        this.movieData = result.Search;
+        this.dataSource = new MatTableDataSource<any>(this.movieData);
+      });
   }
 
-  GetAllPrevPage() {
+  GetPrevPage() {
     const buttonPrev = document.querySelector('.button-prev-page');
 
     this.currentPage--;
-    console.log(this.currentPage);
 
-    this.service.getAllMovies(this.currentPage).subscribe((result) => {
-      this.movieData = result.Search;
-      console.log(result);
+    this.service
+      .getMovies(this.currentName, this.currentPage)
+      .subscribe((result) => {
+        this.movieData = result.Search;
+        this.dataSource = new MatTableDataSource<any>(this.movieData);
+      });
 
-      this.dataSource = new MatTableDataSource<any>(this.movieData);
-    });
     if (this.currentPage === 1) {
-      console.log('currentPage = 1');
       buttonPrev?.setAttribute('disabled', '');
     }
-  }
-
-  getForNameMovie(searchStr: string) {
-    this.service.getForName(searchStr).subscribe((resultSearch) => {
-      this.movieData = resultSearch.Search;
-
-      this.dataSource = new MatTableDataSource<any>(this.movieData);
-    });
   }
 }

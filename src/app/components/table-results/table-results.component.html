@@ -9,7 +9,7 @@
         class="search__btn"
         mat-raised-button
         color="primary"
-        (click)="getForNameMovie(search.value)"
+        (click)="searchMovies(search.value)"
       >
         Search
       </button>
@@ -85,11 +85,11 @@
         padding-top: 30px;
       "
     >
-      <button class="button-prev-page" (click)="GetAllPrevPage()" disabled>
+      <button class="button-prev-page" (click)="GetPrevPage()" disabled>
         Prev page
       </button>
       <span>{{ currentPage }}</span>
-      <button class="button-next-page" (click)="GetAllNextPage()">
+      <button class="button-next-page" (click)="GetNextPage()">
         Next page
       </button>
     </div>

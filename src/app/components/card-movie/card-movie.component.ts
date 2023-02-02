@@ -20,11 +20,10 @@ export class CardMovieComponent implements OnInit {
   }
 
   loadMovie() {
-    this.movieService
-      .getMovie(this.route.snapshot.paramMap.get('id'))
-      .subscribe((movie) => {
-        this.movie = movie;
-      });
+    const id: any = this.route.snapshot.paramMap.get('id');
+    this.movieService.getMovieForId(id).subscribe((movie) => {
+      this.movie = movie;
+    });
   }
 
   // LocalStorage
