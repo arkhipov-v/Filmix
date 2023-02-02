@@ -20,16 +20,10 @@
     }
   }
 
-  &__pagination {
-    position: sticky;
-    bottom: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.12);
-  }
-
   .table-container {
     position: relative;
     min-height: 200px;
-    max-height: 90vh;
+    max-height: 580px;
     overflow: auto;
   }
 }

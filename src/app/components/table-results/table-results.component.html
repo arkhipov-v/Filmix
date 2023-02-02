@@ -74,11 +74,24 @@
           class="table-results__row"
         ></tr>
       </table>
+    </div>
 
-      <mat-paginator
-        class="table-results__pagination"
-        [pageSizeOptions]="[5, 10]"
-      ></mat-paginator>
+    <div
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 30px;
+        padding-top: 30px;
+      "
+    >
+      <button class="button-prev-page" (click)="GetAllPrevPage()" disabled>
+        Prev page
+      </button>
+      <span>{{ currentPage }}</span>
+      <button class="button-next-page" (click)="GetAllNextPage()">
+        Next page
+      </button>
     </div>
   </div>
 </section>

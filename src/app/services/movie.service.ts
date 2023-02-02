@@ -32,9 +32,9 @@ export class MovieService {
     };
   }
 
-  getAllMovies(): Observable<any> {
+  getAllMovies(page: number): Observable<any> {
     return this.http
-      .get(`${this.API_URL}&s=game${this.API_KEY}`)
+      .get(`${this.API_URL}&s=game&page=${page}${this.API_KEY}`)
       .pipe(catchError(this.handleError<any>('getAllMovies', [])));
   }
 
