@@ -5,7 +5,11 @@
 
   td {
     padding-block: 15px;
-    line-height: 0;
+
+    img {
+      min-height: 40px;
+      max-height: 100px;
+    }
   }
 
   .mat-mdc-table .mat-mdc-row {
